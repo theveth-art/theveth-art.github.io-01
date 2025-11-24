@@ -155,4 +155,19 @@
         function moveSlide(n) {}
     </script>
 </body>
+
+    <script>
+        // Aquí defines la contraseña que le darás a tu colaborador
+        var pass = prompt("Sitio Privado del INDAJUCAM. Ingrese la contraseña:");
+        
+        // Si la contraseña NO es correcta...
+        if (pass != "indajucam2025") { 
+            // Borramos todo el cuerpo de la página
+            document.body.innerHTML = ""; 
+            // Mostramos mensaje de error
+            document.write("<div style='text-align:center; margin-top:50px; font-family:Arial;'><h1>🔒 Acceso Denegado</h1><p>No tienes permiso para ver este sitio.</p><button onclick='location.reload()'>Intentar de nuevo</button></div>");
+        }
+    </script>
+    <nav class="navbar">
+        ...
 </html>
