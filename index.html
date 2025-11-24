@@ -3,110 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INDAJUCAM - Instituto de Acceso a la Justicia</title>
+    <title>INDAJUCAM - Inicio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
-    <header class="header-con-banner">
-        <div class="container">
-            <div>
-                <h1>INDAJUCAM</h1>
-                <p>Instituto de Acceso a la Justicia del Estado de Campeche</p>
-            </div>
-        </div>
-    </header>
-
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="directorio.html">Directorio</a></li>
-                <li><a href="noticias.html">Noticias</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Inicio</a></li>
+        </ul>
+        
+        <div class="logo-container">
+            <img src="img/LOGO.JPG" alt="Logo INDAJUCAM" class="logo-img" width="80">
         </div>
     </nav>
 
+   <header class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="img/banner.mp4" type="video/mp4">
+        </video>
+        
+        <div class="hero-overlay-transparent"></div>
+    </header>
+
     <main>
-        <div class="container">
-
-            <section class="servicios-principales">
-                
-                <a href="asesoria-legal.html" class="servicio-boton">
-                    <span class="icono"><i class="fas fa-gavel"></i></span>
-                    <p>Asesoría Legal</p>
+        
+        <section class="tramites-seccion container">
+            
+            <h2 class="titulo-seccion">Trámites y Servicios</h2>
+            
+            <div class="grid-principales">
+                <a href="asesoria.html" class="sat-card card-grande">
+                    <div class="icon-box"><i class="fas fa-scale-balanced"></i></div>
+                    <h3>Unidad de Asesoría Jurídica</h3>
+                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
                 </a>
-                
-                <a href="atencion-victimas.html" class="servicio-boton">
-                    <span class="icono"><i class="fas fa-hands-helping"></i></span>
-                    <p>Atención a Víctimas</p>
-                </a>
-                
-                <a href="materia-familiar.html" class="servicio-boton">
-                    <span class="icono"><i class="fas fa-users"></i></span>
-                    <p>Materia Familiar</p>
-                </a>
-                
-                <a href="mediacion.html" class="servicio-boton">
-                    <span class="icono"><i class="fas fa-comments"></i></span>
-                    <p>Mediación</p>
-                </a>
-                
-            </section>
 
-            <section class="noticias-recientes">
-                <h2>Acciones y Noticias Recientes</h2>
+                <a href="defensoria.html" class="sat-card card-grande">
+                    <div class="icon-box"><i class="fas fa-gavel"></i></div>
+                    <h3>Unidad de Defensoría Pública</h3>
+                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <a href="victimas.html" class="sat-card card-grande">
+                    <div class="icon-box"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Unidad de Atención a Víctimas</h3>
+                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                </a>
+            </div>
+
+            <div class="grid-secundarios">
+                <a href="primera-vez.html" class="sat-card card-chica">
+                    <div class="icon-box"><i class="fas fa-user-plus"></i></div>
+                    <h3>Atención de Primera Vez</h3>
+                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <a href="citas.html" class="sat-card card-chica">
+                    <div class="icon-box"><i class="fas fa-calendar-check"></i></div>
+                    <h3>Citas Electrónicas</h3>
+                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <a href="delegaciones.html" class="sat-card card-chica">
+                    <div class="icon-box"><i class="fas fa-map-location-dot"></i></div>
+                    <h3>Delegaciones</h3>
+                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <a href="directorio.html" class="sat-card card-chica">
+                    <div class="icon-box"><i class="fas fa-address-book"></i></div>
+                    <h3>Directorio</h3>
+                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <a href="operativos.html" class="sat-card card-chica">
+                    <div class="icon-box"><i class="fas fa-clipboard-list"></i></div>
+                    <h3>Operativos</h3>
+                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                </a>
+            </div>
+        </section>
+
+        <section class="galeria-seccion container">
+            <h2 style="color: #444; margin-bottom: 30px; font-size: 28px; text-align: center;">Nuestro Trabajo</h2>
+           <div class="slider-container">
+                <img class="slide active" src="img/fotos-indajucam/1.jpg" alt="Trabajo 1">
+                <img class="slide" src="img/fotos-indajucam/2.jpg" alt="Trabajo 2">
+                <img class="slide" src="img/fotos-indajucam/3.jpg" alt="Trabajo 3">
+                <img class="slide" src="img/fotos-indajucam/4.jpg" alt="Trabajo 4">
+                <img class="slide" src="img/fotos-indajucam/5.jpg" alt="Trabajo 5">
+                <img class="slide" src="img/fotos-indajucam/6.jpg" alt="Trabajo 6">
+                <img class="slide" src="img/fotos-indajucam/7.jpg" alt="Trabajo 7">
+                <img class="slide" src="img/fotos-indajucam/8.jpg" alt="Trabajo 8">
                 
-                <div class="card-container">
-                    <article class="card">
-                        <img src="img/noticia-codesvi.jpg" alt="Reunión INDAJUCAM y CODESVI">
-                        <div class="card-content">
-                            <h3>Firma de convenio con CODESVI</h3>
-                            <p>Sumamos esfuerzos con la Comisión Estatal de Desarrollo de Suelo y Vivienda para brindar asesoría y acompañamiento jurídico.</p>
-                            <a href="noticias.html" class="cta-button card-button">Leer Más</a>
-                        </div>
-                    </article>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
 
-                    <article class="card">
-                        <img src="img/noticia-capacitacion.jpg" alt="Capacitación en transparencia">
-                        <div class="card-content">
-                            <h3>Capacitación en Protección de Datos</h3>
-                            <p>Continuamos fortaleciendo las capacidades de nuestro personal en materia de transparencia y protección de datos personales.</p>
-                            <a href="noticias.html" class="cta-button card-button">Leer Más</a>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <img src="img/noticia-burnout.jpg" alt="Programa de salud mental">
-                        <div class="card-content">
-                            <h3>Programa de Desarrollo Humano</h3>
-                            <p>Implementamos el programa PIDH para cuidar la salud mental de nuestro personal y prevenir el burnout.</p>
-                            <a href="noticias.html" class="cta-button card-button">Leer Más</a>
-                        </div>
-                    </article>
+        <section class="intro-elegante container">
+            <div class="intro-content">
+                <h2>No estás solo ante la ley</h2>
+                <p class="texto-destacado">Somos el instituto público encargado de brindarte defensa jurídica profesional.</p>
+                <p>Nuestro trabajo es asegurar que tus derechos sean respetados, sin importar tu situación económica.</p>
+                
+                <div class="info-badges">
+                    <div class="badge">
+                        <i class="fas fa-sack-dollar"></i>
+                        <span><strong>¿Cuánto cuesta?</strong><br>Nada. Es 100% Gratuito.</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-user-graduate"></i>
+                        <span><strong>¿Son abogados reales?</strong><br>Sí. Titulados y Certificados.</span>
+                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="multimedia">
-                <h2>Conoce tu Instituto</h2>
-                <div class="video-responsive-grande">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/PV7Rsq8sCpc" title="Video de Asesor de Víctimas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <p>Te explicamos la importancia de nuestros servicios.</p>
-            </section>
+        <section class="facebook-seccion container">
+            <h2>Noticias Recientes</h2>
+            <div class="fb-container">
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FINDAJUCAM1&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+                    width="500" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
+            </div>
+        </section>
 
-        </div>
     </main>
 
     <footer>
-        <div class="container">
-            <p>© 2025 INDAJUCAM - Todos los derechos reservados.</p>
-            <p>Instituto de Acceso a la Justicia del Estado de Campeche</p>
+        <div class="container footer-content">
+            <p>Calle Niebla #2, Col. Fracciorama 2000, Campeche. Tel: 981 145 6181</p>
+            <a href="https://www.facebook.com/INDAJUCAM1" target="_blank" class="btn-facebook">Facebook Oficial</a>
         </div>
     </footer>
 
+    <script>
+        let slideIndex = 0;
+        showSlides();
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); 
+        }
+        function moveSlide(n) {}
+    </script>
 </body>
 </html>
