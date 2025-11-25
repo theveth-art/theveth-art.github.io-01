@@ -7,39 +7,89 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+<div id="lightbox-overlay">
+    <span id="close-lightbox">&times;</span>
+    <img id="lightbox-img" src="">
+</div>
+
 <body>
-    <header class="header-con-banner"><div class="container"><div><h1>INDAJUCAM</h1><p>Instituto de Acceso a la Justicia del Estado de Campeche</p></div></div></header>
-    <nav><div class="container"><ul><li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="directorio.html">Directorio</a></li><li><a href="noticias.html">Noticias</a></li><li><a href="contacto.html">Contacto</a></li></ul></div></nav>
+
+    <script>
+        var pass = prompt("Sitio Privado del INDAJUCAM. Ingrese la contraseña:");
+        if (pass != "indajucam2025") { 
+            document.body.innerHTML = ""; 
+            document.write("<div style='text-align:center; margin-top:50px; font-family:Arial;'><h1>🔒 Acceso Denegado</h1><p>Contraseña incorrecta.</p><button onclick='location.reload()'>Reintentar</button></div>");
+        }
+    </script>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="img/LOGO.JPG" alt="Logo INDAJUCAM" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="asesoria-legal.html">Asesoría Jurídica</a></li>
+            <li><a href="defensoria-publica.html">Defensoría Pública</a></li>
+            <li><a href="atencion-victimas.html">Atención a Víctimas</a></li>
+        </ul>
+    </nav>
+    
     <main>
         <div class="container">
             <h2>Directorio Institucional</h2>
             <p>Conoce al equipo directivo que trabaja para garantizar tu acceso a la justicia, con base en el Capítulo III de nuestra Ley.</p>
-            <div class="directorio-container">
-                <article class="profile-card">
-                    <img src="https" alt="Foto de perfil">
-                    <div class="profile-content">
-                        <h3>Mtra. Karla Beatriz Chuc Estrella </h3>
-                        <h4>Encargada de Despacho de la Dirección General</h4>
-                        <p><strong>Atribuciones (Cap. V):</strong> Ejercer la representación legal del Instituto, coordinar a los directores, formular lineamientos y presentar informes a la Junta de Gobierno.</p>
-                    </div>
-                </article>
-                <article class="profile-card">
-                    <img src="https" alt="Foto de perfil">
-                    <div class="profile-content">
-                        <h3>[Nombre del Director de Operación]</h3>
-                        <h4>Director de Operación</h4>
-                        <p><strong>Atribuciones (Cap. VI):</strong> Atender y calificar las solicitudes de apoyo, gestionar los servicios integrales de asesoría, orientación y asistencia jurídica gratuita.</p>
-                    </div>
-                </article>
-                <article class="profile-card">
-                    <img src="https" alt="Foto de perfil">
-                    <div class="profile-content">
-                        <h3>[Nombre del Director de Administración]</h3>
-                        <h4>Director de Administración</h4>
-                        <p><strong>Atribuciones (Cap. VII):</strong> Atender las necesidades administrativas, elaborar el anteproyecto de presupuesto y administrar los recursos humanos, financieros y materiales.</p>
-                    </div>
-                </article>
+            <div class="organigrama">
+                <img src="img/directorio/organigrama.jpg" alt="Organigrama Institucional">
+            </div>    
+
+            <div class="directorio-grid">
+
+                <div class="directorio-item">
+                    <img src="img/directorio/KARLA BEATRIZ CHUC ESTRELLA.jpg" alt="Foto de peril">
+                    <h3>Karla Beatriz Chuc Estrella</h3>
+                    <p class="puesto">Encargada del Despacho de la Dirección General</p>
+                    <p class="desc">Ext. 1008</p>
+                </div>
+
+                <div class="directorio-item">
+                    <img src="img/directorio/BARAJAS FELIX KAREN ALICIA.jpg" alt="Foto de peril">
+                    <h3>Barajas Felix Karen Alicia</h3>
+                    <p class="puesto">Titular de la Unidad de Transparencia</p>
+                    <p class="desc">Ext. 1001</p>
+                </div>
+
+                <div class="directorio-item">
+                    <img src="img/directorio/GUADALUPE MONTALVO GARCIA.jpg" alt="Foto de peril">
+                    <h3>Guadalupe Montalvo Garcia</h3>
+                    <p class="puesto">Encargada de la Dirección de Administración</p>
+                    <p class="desc">Ext. 1004</p>
+                </div>
+
+                <div class="directorio-item">
+                    <img src="img/directorio/PEREZ ESTRELLA MAYRA YOSELIN.jpeg" alt="Foto de peril">
+                    <h3>Perez Estrella Mayra Yoselin</h3>
+                    <p class="puesto">Titular de la Unidad de Asistencia Juridica</p>
+                    <p class="desc">Ext. 1040</p>
+                </div>
+
+                <div class="directorio-item">
+                    <img src="img/directorio/TELLO GARCIA LORENA DEL ROSARIO.jpeg" alt="Foto de peril">
+                    <h3>Tello Garcia Lorena del Rosario</h3>
+                    <p class="puesto">Titular de la Unidad de Defensoria Publica</p>
+                    <p class="desc">Ext. 1016</p>
+                </div>
+
+                <div class="directorio-item">
+                    <img src="img/directorio/MEX PÉREZ EDUARDO ENRIQUE.jpg" alt="Foto de peril">
+                    <h3>Mex Perez Eduardo Enrique</h3>
+                    <p class="puesto">Titular de la Unidad de Asistencia y Atencion a Victimas</p>
+                    <p class="desc">Ext. 1033</p>
+                </div>
+
             </div>
+
+
+            
             <section class="delegaciones">
                 <h3><i class="fas fa-map-marker-alt"></i> Nuestras Delegaciones Municipales</h3>
                 <p>Contamos con 8 delegaciones para estar más cerca de ti.</p>
@@ -57,5 +107,27 @@
         </div>
     </main>
     <footer><div class="container"><p>© 2025 INDAJUCAM - Todos los derechos reservados.</p><p>Instituto de Acceso a la Justicia del Estado de Campeche</p></div></footer>
+
+    <script>
+    document.querySelectorAll('.zoom-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const imgSrc = this.getAttribute('data-img');
+            document.getElementById("lightbox-img").src = imgSrc;
+            document.getElementById("lightbox-overlay").style.display = "flex";
+        });
+    });
+
+    document.getElementById("close-lightbox").addEventListener('click', function() {
+        document.getElementById("lightbox-overlay").style.display = "none";
+    });
+
+    // Cerrar con ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === "Escape") {
+            document.getElementById("lightbox-overlay").style.display = "none";
+        }
+    });
+    </script>
+
 </body>
 </html>
