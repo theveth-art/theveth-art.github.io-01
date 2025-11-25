@@ -121,6 +121,14 @@
     });
     </script>
 
+    <script>
+        var pass = prompt("Sitio Privado del INDAJUCAM. Ingrese la contraseña:");
+        if (pass != "indajucam2025") { 
+            document.body.innerHTML = ""; 
+            document.write("<div style='text-align:center; margin-top:50px; font-family:Arial;'><h1>🔒 Acceso Denegado</h1><p>Contraseña incorrecta.</p><button onclick='location.reload()'>Reintentar</button></div>");
+        }
+    </script>
+
 
 </body>
 </html>
