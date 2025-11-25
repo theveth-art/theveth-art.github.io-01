@@ -411,3 +411,139 @@ footer {
         max-width: 500px;
     }
 }
+
+/* =========================================
+   ESTILOS PÁGINA DELEGACIONES
+   ========================================= */
+.header-simple {
+    background-color: #9D2449; /* Color Guinda */
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+}
+
+.header-simple h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.header-simple p {
+    font-size: 18px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* =========================================
+   ESTILOS PARA DELEGACIONES (CORREGIDO)
+   ========================================= */
+
+.header-delegaciones {
+    background-color: #9D2449;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+}
+
+.header-delegaciones h1 { margin: 0; font-size: 32px; }
+.header-delegaciones p { margin-top: 5px; opacity: 0.9; }
+
+/* Sede Central */
+.sede-principal {
+    background: #fff;
+    border-left: 8px solid #9D2449;
+    padding: 30px;
+    
+    /* CAMBIO: Aumentamos de 50px a 100px para dar bastante espacio */
+    margin-bottom: 100px; 
+    
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 0 10px 10px 0;
+}
+
+/* Grid de Tarjetas */
+.delegaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding-bottom: 60px;
+}
+
+.delegacion-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.delegacion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* --- CORRECCIÓN DE FOTOS --- */
+
+.foto-delegado {
+    width: 100%;
+    height: 350px; /* Buena altura para retrato */
+    background-color: #e0e0e0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foto-delegado img {
+    width: 100%;
+    height: 100%;
+    
+   
+    object-fit: cover;       /* Rellena el cuadro */
+    object-position: center; /* Enfoca el puro centro de la imagen (ni muy arriba ni muy abajo) */
+    
+    transition: transform 0.5s ease;
+}
+
+/* Efecto Zoom */
+.delegacion-card:hover .foto-delegado img {
+    transform: scale(1.05);
+}
+/* -------------------------------- */
+
+.info-delegacion {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-delegacion h3 { color: #9D2449; margin-bottom: 5px; font-size: 22px; text-transform: uppercase; }
+.titular { font-weight: bold; color: #333; margin-bottom: 5px; }
+.materias { font-size: 13px; color: #666; font-style: italic; margin-bottom: 15px; }
+
+.datos-contacto {
+    margin-top: auto;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.datos-contacto p { font-size: 14px; margin-bottom: 10px; color: #555; }
+
+.btn-llamada {
+    display: block;
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+    text-decoration: none;
+}
+
+.btn-llamada:hover { background: #9D2449; }

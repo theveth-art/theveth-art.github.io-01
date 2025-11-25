@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegaciones - INDAJUCAM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* --- ESTILOS ESPECÍFICOS PARA ESTA PÁGINA (DELEGACIONES) --- */
+        
+        body { background-color: #fcfcfc; color: #333; font-family: 'Segoe UI', sans-serif; }
+        
+        .container-delegaciones { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        
+        .section-title { text-align: center; color: #8B1D35; font-size: 2.5rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; }
+
+        /* Banner de Horarios */
+        .info-banner {
+            background-color: #fff;
+            border-left: 5px solid #BC955C; /* Dorado */
+            padding: 20px;
+            margin: 0 auto 50px auto;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+        .info-banner p { margin: 5px 0; font-size: 1.1rem; }
+        .nota-leyenda { margin-top: 15px !important; font-size: 0.95rem !important; color: #666; font-style: italic; border-top: 1px solid #eee; padding-top: 10px; }
+
+        /* Fotos de Edificios (Completas y centradas) */
+        .delegation-photo { 
+            width: 100%; 
+            max-width: 900px; 
+            height: auto; 
+            display: block; 
+            margin: 0 auto 25px auto; 
+            border-radius: 4px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+            border: 1px solid #eee; 
+        }
+
+        /* Bloques de Delegación */
+        .delegation-block { background: #fff; margin-bottom: 60px; border: 1px solid #e1e1e1; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .mencion-campeche { background-color: #fff; padding: 30px; text-align: center; border-left: 6px solid #8B1D35; margin-bottom: 50px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-radius: 4px; }
+        
+        .delegation-header { background-color: #8B1D35; color: white; padding: 15px 25px; }
+        .delegation-header h3 { margin: 0; font-size: 1.4rem; font-weight: 600; text-transform: uppercase; }
+        
+        .delegation-body { padding: 30px; }
+        
+        .delegation-info h4, .staff-section h4 { color: #8B1D35; border-bottom: 2px solid #f0f0f0; padding-bottom: 8px; margin-bottom: 15px; font-size: 1.1rem; text-transform: uppercase; }
+        .delegation-info ul { list-style: none; padding: 0; }
+        .delegation-info li::before { content: "• "; color: #8B1D35; font-weight: bold; margin-right: 5px; }
+        .contact-details { background: #f8f9fa; padding: 15px; border-radius: 6px; margin-top: 20px; font-size: 0.95rem; border-left: 3px solid #555; }
+
+        /* Personal y Grillas */
+        .staff-section { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
+        .staff-grid { display: flex; flex-wrap: wrap; gap: 25px; justify-content: flex-start; }
+        .staff-grid.centered { justify-content: center; margin-bottom: 30px; }
+
+        /* Tarjetas Personal */
+        .staff-card { background: #fff; border: 1px solid #eee; padding: 20px; border-radius: 8px; text-align: center; width: 200px; transition: transform 0.2s; }
+        .staff-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .staff-card img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 4px solid #f4f4f4; margin-bottom: 15px; }
+        .staff-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 5px; text-transform: capitalize; color: #222; }
+        .staff-role { font-size: 0.8rem; color: #777; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* TARJETA DELEGADO (DESTACADA) */
+        .delegado-card { width: 100%; max-width: 350px; border: 2px solid #8B1D35; background-color: #fff; padding: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+        .delegado-card img { width: 180px; height: 180px; border-color: #BC955C; }
+        .delegado-card .staff-name { font-size: 1.2rem; margin-top: 10px; }
+        .delegado-card .staff-role { font-size: 1rem; font-weight: bold; color: #8B1D35; }
+
+        /* Botón Teléfono */
+        .phone-btn { display: inline-block; background-color: #8B1D35; color: #fff !important; padding: 8px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; margin-top: 15px; font-size: 1rem; transition: background 0.3s ease; box-shadow: 0 4px 6px rgba(139, 29, 53, 0.2); }
+        .phone-btn:hover { background-color: #6a1628; transform: translateY(-2px); }
+
+        /* Responsivo */
+        @media (max-width: 768px) { .staff-grid { justify-content: center; } .staff-card, .delegado-card { width: 100%; max-width: 280px; } }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <a href="index.html"><img src="img/LOGO.JPG" alt="Logo INDAJUCAM" class="logo-img"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">INICIO</a></li>
+        </ul>
+    </nav>
+
+    <main class="container-delegaciones">
+        
+        <h2 class="section-title">Nuestras Delegaciones</h2>
+
+        <div class="info-banner">
+            <p><strong>📅 Días de Atención:</strong> Lunes a Viernes</p>
+            <p><strong>🕒 Horario:</strong> 8:00 am a 15:30 p.m.</p>
+            <p class="nota-leyenda">"Todos los servicios y asesorías de este Instituto son totalmente gratuitos"</p>
+        </div>
+
+        <div class="mencion-campeche">
+            <img src="img/delegados/campeche.jpg" alt="INDAJUCAM Oficina Central" class="delegation-photo">
+            <h3>Delegación Campeche - Oficina Central</h3>
+            <p><strong>Sede Principal INDAJUCAM</strong></p>
+            <p>Calle Niebla #2 Fracciorama 2000</p>
+            <p><strong>Teléfonos:</strong> 981 145 6064 y 981 145 6181</p>
+        </div>
+
+        <div class="delegation-block">
+            <div class="delegation-header"><h3>Delegación Carmen</h3></div>
+            <div class="delegation-body">
+                <img src="img/delegados/carmen.jpg" alt="Edificio Delegación Carmen" class="delegation-photo">
+                
+                <div class="delegation-info">
+                    <h4>Servicios</h4>
+                    <ul><li>Civil</li><li>Familiar</li><li>Mercantil</li><li>Administrativo</li></ul>
+                    <p><strong>Atención a Víctimas:</strong> Asistencia con Fiscalía.</p>
+                    <div class="contact-details">
+                        <p><strong>Dirección:</strong> Casa de Justicia Av. Puerto de Campeche S/N entre Nigromantes y Fraccionamiento Santa Isabel.</p>
+                    </div>
+                </div>
+
+                <div class="staff-section">
+                    <div class="staff-grid centered">
+                        <div class="staff-card delegado-card">
+                            <img src="img/delegados/delegado cicler zavala eric uvence martin.jpg" alt="Eric Uvence">
+                            <div class="staff-name">Mtro. Eric Uvence Martin Cicler Zavala</div>
+                            <div class="staff-role">Delegado</div>
+                            <a href="tel:9384009201" class="phone-btn"><i class="fas fa-phone"></i> 938 400 9201</a>
+                        </div>
+                    </div>
+                    
+                    <h4 style="margin-top: 30px;">Equipo de Abogados</h4>
+                    <div class="staff-grid">
+                        <div class="staff-card"><img src="img/delegados/alamilla llergo ricardo luciano.jpg"><div class="staff-name">Ricardo Luciano Alamilla Llergo</div></div>
+                        <div class="staff-card"><img src="img/delegados/alan orlando pérez benítez.jpg"><div class="staff-name">Alan Orlando Pérez Benítez</div></div>
+                        <div class="staff-card"><img src="img/delegados/blanca yuli sánchez gómez.jpg"><div class="staff-name">Blanca Yuli Sánchez Gómez</div></div>
+                        <div class="staff-card"><img src="img/delegados/cabrera cruz josefa del jesus.jpg"><div class="staff-name">Josefa del Jesús Cabrera Cruz</div></div>
+                        <div class="staff-card"><img src="img/delegados/cante garcia isaias.jpg"><div class="staff-name">Isaías Cante García</div></div>
+                        <div class="staff-card"><img src="img/delegados/carolina maría ávila méndez.jpg"><div class="staff-name">Carolina María Ávila Méndez</div></div>
+                        <div class="staff-card"><img src="img/delegados/daniela rejón polkey.jpg"><div class="staff-name">Daniela Rejón Polkey</div></div>
+                        <div class="staff-card"><img src="img/delegados/delgado chan alicia.jpg"><div class="staff-name">Alicia Delgado Chan</div></div>
+                        <div class="staff-card"><img src="img/delegados/genoveva denis catalina méndez hernández.jpg"><div class="staff-name">Genoveva D. C. Méndez Hernández</div></div>
+                        <div class="staff-card"><img src="img/delegados/hernandez de la cruz juan manuel.jpg"><div class="staff-name">Juan Manuel Hernández de la Cruz</div></div>
+                        <div class="staff-card"><img src="img/delegados/may zavala vidal.jpg"><div class="staff-name">Vidal May Zavala</div></div>
+                        <div class="staff-card"><img src="img/delegados/karen itchel quintero guzmán.jpg"><div class="staff-name">Karen Itchel Quintero Guzmán</div></div>
+                        <div class="staff-card"><img src="img/delegados/palestino lopez omar francisco.jpg"><div class="staff-name">Omar Francisco Palestino López</div></div>
+                        <div class="staff-card"><img src="img/delegados/pavon ordaz irma.jpg"><div class="staff-name">Irma Pavón Ordaz</div></div>
+                        <div class="staff-card"><img src="img/delegados/perez hernandez juana isabel.jpg"><div class="staff-name">Juana Isabel Pérez Hernández</div></div>
+                        <div class="staff-card"><img src="img/delegados/sarahí carrillo ávila.jpg"><div class="staff-name">Sarahí Carrillo Ávila</div></div>
+                        <div class="staff-card"><img src="img/delegados/sergio dolores can cruz.jpg"><div class="staff-name">Sergio Dolores Can Cruz</div></div>
+                        <div class="staff-card"><img src="img/delegados/silva quijano fernando daniel.jpg"><div class="staff-name">Fernando Daniel Silva Quijano</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="delegation-block">
+            <div class="delegation-header"><h3>Delegación Escárcega</h3></div>
+            <div class="delegation-body">
+                <img src="img/delegados/escarcega.jpg" alt="Edificio Delegación Escárcega" class="delegation-photo">
+
+                <div class="delegation-info">
+                    <h4>Servicios</h4>
+                    <ul><li>Familiar</li><li>Civil</li><li>Mercantil</li></ul>
+                    <p><strong>Atención a Víctimas:</strong> Asistencia con Fiscalía y Centro de Justicia para las Mujeres.</p>
+                    <div class="contact-details">
+                        <p><strong>Dirección:</strong> Calle 42 “B” por 63 S/N Col. Carlos Salinas de Gortari.</p>
+                    </div>
+                </div>
+                <div class="staff-section">
+                    <div class="staff-grid centered">
+                        <div class="staff-card delegado-card">
+                            <img src="img/delegados/delegada herrera estrella eli esmeralda.jpg" alt="Eli Herrera">
+                            <div class="staff-name">Lic. Eli Esmeralda Herrera Estrella</div>
+                            <div class="staff-role">Delegada</div>
+                            <a href="tel:9811818047" class="phone-btn"><i class="fas fa-phone"></i> 981 181 8047</a>
+                        </div>
+                    </div>
+                    <h4 style="margin-top:20px">Personal</h4>
+                    <div class="staff-grid">
+                        <div class="staff-card">
+                            <img src="img/delegados/gonzales cu cristian jesús.jpg" alt="Cristian Gonzales">
+                            <div class="staff-name">Cristian Jesús Gonzales Cu</div>
+                            <div class="staff-role">Abogado</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="delegation-block">
+            <div class="delegation-header"><h3>Delegación Xpujil (Calakmul)</h3></div>
+            <div class="delegation-body">
+                <img src="img/delegados/xpujil.jpg" alt="Edificio Delegación Xpujil" class="delegation-photo">
+
+                <div class="delegation-info">
+                    <h4>Servicios</h4>
+                    <ul><li>Familiar</li><li>Civil</li><li>Mercantil</li></ul>
+                    <p><strong>Atención a Víctimas:</strong> Asistencia con Fiscalía.</p>
+                    <div class="contact-details">
+                        <p><strong>Dirección:</strong> Calle sin nombre entre Halaltun y Pechal Col. Centro.</p>
+                    </div>
+                </div>
+                <div class="staff-section">
+                    <div class="staff-grid centered">
+                        <div class="staff-card delegado-card">
+                            <img src="img/delegados/chiquil dzul janet isela.jpg" alt="Janet Chiquil">
+                            <div class="staff-name">Janet Isela Chiquil Dzul</div>
+                            <div class="staff-role">Delegada</div>
+                            <a href="tel:9811681949" class="phone-btn"><i class="fas fa-phone"></i> 981 168 1949</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="delegation-block">
+            <div class="delegation-header"><h3>Delegación Candelaria</h3></div>
+            <div class="delegation-body">
+                <img src="img/delegados/candelaria.jpg" alt="Edificio Delegación Candelaria" class="delegation-photo">
+
+                <div class="delegation-info">
+                    <h4>Servicios</h4>
+                    <ul><li>Familiar</li><li>Civil</li></ul>
+                    <p><strong>Atención a Víctimas:</strong> Asistencia con Fiscalía.</p>
+                    <div class="contact-details">
+                        <p><strong>Dirección:</strong> Calle 16 #87 entre 27 y 29 (a lado de papelería “El Estudiante”) Col. Guanajuato.</p>
+                    </div>
+                </div>
+                <div class="staff-section">
+                    <div class="staff-grid centered">
+                        <div class="staff-card delegado-card">
+                            <img src="img/delegados/saucedo camara luis alfredo.jpg" alt="Luis Saucedo">
+                            <div class="staff-name">Lic. Luis Alfredo Saucedo Camara</div>
+                            <div class="staff-role">Delegado</div>
+                            <a href="tel:9811006735" class="phone-btn"><i class="fas fa-phone"></i> 981 100 6735</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="delegation-block">
+            <div class="delegation-header"><h3>Delegación Champotón</h3></div>
+            <div class="delegation-body">
+                <img src="img/delegados/champoton.jpg" alt="Edificio Delegación Champotón" class="delegation-photo">
+
+                <div class="delegation-info">
+                    <h4>Servicios</h4>
+                    <ul><li>Familiar</li></ul>
+                    <p><strong>Atención a Víctimas:</strong> Asistencia con Fiscalía.</p>
+                    <div class="contact-details">
+                        <p><strong>Dirección:</strong> Calle 14 Letra “B” Colonia Cuahutemoc Cardenas, Edificio Casa de Justicia.</p>
+                    </div>
+                </div>
+                <div class="staff-section">
+                    <div class="staff-grid centered">
+                        <div class="staff-card delegado-card">
+                            <img src="img/delegados/cuy cuy josé bernardo.jpg" alt="José Cuy">
+                            <div class="staff-name">Lic. José Bernardo Cuy Cuy</div>
+                            <div class="staff-role">Delegado</div>
+                            <a href="tel:9812082979" class="phone-btn"><i class="fas fa-phone"></i> 981 208 2979</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="delegation-block">
+            <div class="delegation-header"><h3>Delegación Hecelchakán</h3></div>
+            <div class="delegation-body">
+                <img src="img/delegados/hecelchakan.jpg" alt="Edificio Delegación Hecelchakán" class="delegation-photo">
+
+                <div class="delegation-info">
+                    <h4>Servicios</h4>
+                    <ul><li>Civil</li><li>Familiar</li><li>Mercantil</li></ul>
+                    <p><strong>Atención a Víctimas:</strong> Asistencia con Fiscalía.</p>
+                    <div class="contact-details">
+                        <p><strong>Dirección:</strong> Calle 20 entre 7 y 9 S/N, Barrio la Conquista.</p>
+                    </div>
+                </div>
+                <div class="staff-section">
+                    <div class="staff-grid centered">
+                        <div class="staff-card delegado-card">
+                            <img src="img/delegados/chan chan jose leonardo.jpg" alt="José Chan">
+                            <div class="staff-name">José Leonardo Chan Chan</div>
+                            <div class="staff-role">Delegado</div>
+                            <a href="tel:9902085049" class="phone-btn"><i class="fas fa-phone"></i> 990 208 5049</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="delegation-block">
+            <div class="delegation-header"><h3>Delegación Calkiní</h3></div>
+            <div class="delegation-body">
+                <img src="img/delegados/calkini.jpg" alt="Edificio Delegación Calkiní" class="delegation-photo">
+
+                <div class="delegation-info">
+                    <h4>Servicios</h4>
+                    <ul><li>Civil</li><li>Familiar</li></ul>
+                    <p><strong>Atención a Víctimas:</strong> Asistencia con Fiscalía.</p>
+                    <div class="contact-details">
+                        <p><strong>Dirección:</strong> Calle 20 entre 15 y 17 Col. Centro (Interior de la casa de la Cultura Municipal).</p>
+                    </div>
+                </div>
+                <div class="staff-section">
+                    <div class="staff-grid centered">
+                        <div class="staff-card delegado-card">
+                            <img src="img/delegados/ake diaz pedro ivan.jpeg" alt="Pedro Ake">
+                            <div class="staff-name">Lic. Pedro Ivan Ake Diaz</div>
+                            <div class="staff-role">Delegado</div>
+                            <a href="tel:9961004194" class="phone-btn"><i class="fas fa-phone"></i> 996 100 4194</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>
+                <strong>Instituto de Acceso a la Justicia del Estado de Campeche (INDAJUCAM)</strong><br>
+                Calle Niebla #2, Col. Fracciorama 2000, Campeche.<br>
+                Tel: 981 145 6181
+            </p>
+            <a href="https://www.facebook.com/INDAJUCAM1" target="_blank" class="btn-facebook">
+                <i class="fab fa-facebook-f"></i> Ir al Facebook Oficial
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
