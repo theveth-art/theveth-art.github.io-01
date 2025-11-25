@@ -9,28 +9,33 @@
 </head>
 <body>
 
+    <script>
+        var pass = prompt("Sitio Privado del INDAJUCAM. Ingrese la contraseña:");
+        if (pass != "indajucam2025") { 
+            document.body.innerHTML = ""; 
+            document.write("<div style='text-align:center; margin-top:50px; font-family:Arial;'><h1>🔒 Acceso Denegado</h1><p>Contraseña incorrecta.</p><button onclick='location.reload()'>Reintentar</button></div>");
+        }
+    </script>
+
     <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Inicio</a></li>
-        </ul>
-        
         <div class="logo-container">
-            <img src="img/LOGO.JPG" alt="Logo INDAJUCAM" class="logo-img" width="80">
+            <img src="img/LOGO.JPG" alt="Logo INDAJUCAM" class="logo-img">
         </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">INICIO</a></li>
+        </ul>
     </nav>
 
-   <header class="hero">
+    <header class="hero">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="img/banner.mp4" type="video/mp4">
         </video>
-        
         <div class="hero-overlay-transparent"></div>
     </header>
 
     <main>
         
         <section class="tramites-seccion container">
-            
             <h2 class="titulo-seccion">Trámites y Servicios</h2>
             
             <div class="grid-principales">
@@ -39,13 +44,11 @@
                     <h3>Unidad de Asesoría Jurídica</h3>
                     <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
                 </a>
-
                 <a href="defensoria.html" class="sat-card card-grande">
                     <div class="icon-box"><i class="fas fa-gavel"></i></div>
                     <h3>Unidad de Defensoría Pública</h3>
                     <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
                 </a>
-
                 <a href="victimas.html" class="sat-card card-grande">
                     <div class="icon-box"><i class="fas fa-hand-holding-heart"></i></div>
                     <h3>Unidad de Atención a Víctimas</h3>
@@ -59,25 +62,21 @@
                     <h3>Atención de Primera Vez</h3>
                     <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
                 </a>
-
                 <a href="citas.html" class="sat-card card-chica">
                     <div class="icon-box"><i class="fas fa-calendar-check"></i></div>
                     <h3>Citas Electrónicas</h3>
                     <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
                 </a>
-
                 <a href="delegaciones.html" class="sat-card card-chica">
                     <div class="icon-box"><i class="fas fa-map-location-dot"></i></div>
                     <h3>Delegaciones</h3>
                     <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
                 </a>
-
                 <a href="directorio.html" class="sat-card card-chica">
                     <div class="icon-box"><i class="fas fa-address-book"></i></div>
                     <h3>Directorio</h3>
                     <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
                 </a>
-
                 <a href="operativos.html" class="sat-card card-chica">
                     <div class="icon-box"><i class="fas fa-clipboard-list"></i></div>
                     <h3>Operativos</h3>
@@ -88,86 +87,99 @@
 
         <section class="galeria-seccion container">
             <h2 style="color: #444; margin-bottom: 30px; font-size: 28px; text-align: center;">Nuestro Trabajo</h2>
-           <div class="slider-container">
-                <img class="slide active" src="img/fotos-indajucam/1.jpg" alt="Trabajo 1">
-                <img class="slide" src="img/fotos-indajucam/2.jpg" alt="Trabajo 2">
-                <img class="slide" src="img/fotos-indajucam/3.jpg" alt="Trabajo 3">
-                <img class="slide" src="img/fotos-indajucam/4.jpg" alt="Trabajo 4">
-                <img class="slide" src="img/fotos-indajucam/5.jpg" alt="Trabajo 5">
-                <img class="slide" src="img/fotos-indajucam/6.jpg" alt="Trabajo 6">
-                <img class="slide" src="img/fotos-indajucam/7.jpg" alt="Trabajo 7">
-                <img class="slide" src="img/fotos-indajucam/8.jpg" alt="Trabajo 8">
-                
-                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-                <button class="next" onclick="moveSlide(1)">&#10095;</button>
-            </div>
-        </section>
+            <div class="slider-area">
+                <div class="slider-track">
+                    
+                    <div class="slide-item"><img src="img/fotos-indajucam/1.jpg" alt="Foto 1"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/2.jpg" alt="Foto 2"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/3.jpg" alt="Foto 3"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/4.jpg" alt="Foto 4"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/5.jpg" alt="Foto 5"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/6.jpg" alt="Foto 6"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/7.jpg" alt="Foto 7"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/8.jpg" alt="Foto 8"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/9.jpg" alt="Foto 9"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/10.jpg" alt="Foto 10"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/11.jpg" alt="Foto 11"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/12.jpg" alt="Foto 12"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/13.jpg" alt="Foto 13"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/14.jpg" alt="Foto 14"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/15.jpg" alt="Foto 15"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/16.jpg" alt="Foto 16"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/17.jpg" alt="Foto 17"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/18.jpg" alt="Foto 18"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/19.jpg" alt="Foto 19"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/20.jpg" alt="Foto 20"></div>
 
-        <section class="intro-elegante container">
-            <div class="intro-content">
-                <h2>No estás solo ante la ley</h2>
-                <p class="texto-destacado">Somos el instituto público encargado de brindarte defensa jurídica profesional.</p>
-                <p>Nuestro trabajo es asegurar que tus derechos sean respetados, sin importar tu situación económica.</p>
-                
-                <div class="info-badges">
-                    <div class="badge">
-                        <i class="fas fa-sack-dollar"></i>
-                        <span><strong>¿Cuánto cuesta?</strong><br>Nada. Es 100% Gratuito.</span>
-                    </div>
-                    <div class="badge">
-                        <i class="fas fa-user-graduate"></i>
-                        <span><strong>¿Son abogados reales?</strong><br>Sí. Titulados y Certificados.</span>
-                    </div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/1.jpg" alt="Foto 1"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/2.jpg" alt="Foto 2"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/3.jpg" alt="Foto 3"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/4.jpg" alt="Foto 4"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/5.jpg" alt="Foto 5"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/6.jpg" alt="Foto 6"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/7.jpg" alt="Foto 7"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/8.jpg" alt="Foto 8"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/9.jpg" alt="Foto 9"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/10.jpg" alt="Foto 10"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/11.jpg" alt="Foto 11"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/12.jpg" alt="Foto 12"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/13.jpg" alt="Foto 13"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/14.jpg" alt="Foto 14"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/15.jpg" alt="Foto 15"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/16.jpg" alt="Foto 16"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/17.jpg" alt="Foto 17"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/18.jpg" alt="Foto 18"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/19.jpg" alt="Foto 19"></div>
+                    <div class="slide-item"><img src="img/fotos-indajucam/20.jpg" alt="Foto 20"></div>
+                    
                 </div>
             </div>
         </section>
 
-        <section class="facebook-seccion container">
-            <h2>Noticias Recientes</h2>
-            <div class="fb-container">
-                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FINDAJUCAM1&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
-                    width="500" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                </iframe>
-            </div>
-        </section>
+        <div class="doble-columna container">
+            
+            <section class="facebook-seccion">
+                <h2>Noticias Recientes</h2>
+                <div class="fb-container">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FINDAJUCAM1&tabs=timeline&width=400&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+                        width="100%" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
+                </div>
+            </section>
 
-    </main>
+            <section class="intro-elegante">
+                <div class="intro-content">
+                    <h2>No estás solo ante la ley</h2>
+                    <p class="texto-destacado">Somos el instituto público encargado de brindarte defensa jurídica profesional.</p>
+                    <p>Nuestro trabajo es asegurar que tus derechos sean respetados, sin importar tu situación económica.</p>
+                    
+                    <div class="info-badges">
+                        <div class="badge">
+                            <i class="fas fa-sack-dollar"></i>
+                            <span><strong>¿Cuánto cuesta?</strong><br>Nada. Es 100% Gratuito.</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-user-graduate"></i>
+                            <span><strong>¿Son abogados reales?</strong><br>Sí. Titulados y Certificados.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div> </main>
 
     <footer>
-        <div class="container footer-content">
-            <p>Calle Niebla #2, Col. Fracciorama 2000, Campeche. Tel: 981 145 6181</p>
-            <a href="https://www.facebook.com/INDAJUCAM1" target="_blank" class="btn-facebook">Facebook Oficial</a>
+        <div class="footer-content">
+            <p>
+                <strong>Instituto de Acceso a la Justicia del Estado de Campeche (INDAJUCAM)</strong><br>
+                Calle Niebla #2, Col. Fracciorama 2000, Campeche.<br>
+                Tel: 981 145 6181
+            </p>
+            <a href="https://www.facebook.com/INDAJUCAM1" target="_blank" class="btn-facebook">
+                <i class="fab fa-facebook-f"></i> Ir al Facebook Oficial
+            </a>
         </div>
     </footer>
 
-    <script>
-        let slideIndex = 0;
-        showSlides();
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("slide");
-            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            slides[slideIndex-1].style.display = "block";  
-            setTimeout(showSlides, 3000); 
-        }
-        function moveSlide(n) {}
-    </script>
 </body>
-
-    <script>
-        // Aquí defines la contraseña que le darás a tu colaborador
-        var pass = prompt("Sitio Privado del INDAJUCAM. Ingrese la contraseña:");
-        
-        // Si la contraseña NO es correcta...
-        if (pass != "indajucam2025") { 
-            // Borramos todo el cuerpo de la página
-            document.body.innerHTML = ""; 
-            // Mostramos mensaje de error
-            document.write("<div style='text-align:center; margin-top:50px; font-family:Arial;'><h1>🔒 Acceso Denegado</h1><p>No tienes permiso para ver este sitio.</p><button onclick='location.reload()'>Intentar de nuevo</button></div>");
-        }
-    </script>
-    <nav class="navbar">
-        ...
 </html>
