@@ -13,24 +13,13 @@
 </div>
 
 <body>
-
-    <script>
-        var pass = prompt("Sitio Privado del INDAJUCAM. Ingrese la contraseña:");
-        if (pass != "indajucam2025") { 
-            document.body.innerHTML = ""; 
-            document.write("<div style='text-align:center; margin-top:50px; font-family:Arial;'><h1>🔒 Acceso Denegado</h1><p>Contraseña incorrecta.</p><button onclick='location.reload()'>Reintentar</button></div>");
-        }
-    </script>
-
+    
     <nav class="navbar">
         <div class="logo-container">
-            <img src="img/LOGO.JPG" alt="Logo INDAJUCAM" class="logo-img">
+            <a href="index.html"><img src="img/LOGO.JPG" alt="Logo INDAJUCAM" class="logo-img"></a>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html" class="active">Inicio</a></li>
-            <li><a href="asesoria-legal.html">Asesoría Jurídica</a></li>
-            <li><a href="defensoria-publica.html">Defensoría Pública</a></li>
-            <li><a href="atencion-victimas.html">Atención a Víctimas</a></li>
+            <li><a href="index.html">INICIO</a></li>
         </ul>
     </nav>
     
