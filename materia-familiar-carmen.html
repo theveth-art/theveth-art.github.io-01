@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materia Familiar (Carmen) - INDAJUCAM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* --- ESTILOS IGUALES --- */
+        body { background-color: #f4f6f9; font-family: 'Segoe UI', sans-serif; }
+        .navbar img { height: 60px; width: auto; display: block; }
+        .page-header { background: linear-gradient(135deg, #8B1D35 0%, #5e1224 100%); color: white; padding: 50px 20px; text-align: center; margin-bottom: 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .page-header h1 { margin: 0; font-size: 2.5rem; text-transform: uppercase; letter-spacing: 1px; }
+        .page-header p { font-size: 1.2rem; margin-top: 10px; opacity: 0.9; }
+        
+        .titular-box { background-color: #fff; border-top: 5px solid #8B1D35; padding: 30px; margin-bottom: 40px; border-radius: 8px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .titular-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #BC955C; margin-bottom: 15px; }
+        
+        .sede-title { text-align: center; color: #fff; background-color: #BC955C; padding: 10px; margin: 40px 0 20px 0; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; }
+        .staff-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px; }
+        .staff-card { width: 220px; text-align: center; border: 1px solid #eee; padding: 15px; border-radius: 8px; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: transform 0.3s; border-top: 4px solid transparent; }
+        .staff-card:hover { transform: translateY(-5px); border-top-color: #8B1D35; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .staff-card img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #8B1D35; margin-bottom: 10px; }
+        .staff-name { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: #333; }
+        .staff-role { font-size: 0.75rem; color: #666; margin-top: 5px; font-weight: bold; }
+
+        /* --- ACORDEONES Y EXTRAS --- */
+        details { background: #fff; border: 1px solid #e1e1e1; border-radius: 8px; margin-bottom: 10px; overflow: hidden; transition: all 0.3s ease; }
+        details:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: translateY(-2px); }
+        summary { padding: 15px 20px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; background-color: #fff; color: #444; list-style: none; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; color: #BC955C; transition: transform 0.3s; }
+        details[open] summary { background-color: #8B1D35; color: #fff; }
+        details[open] summary::after { transform: rotate(180deg); color: #fff; }
+        .details-content { padding: 25px; border-top: 1px solid #eee; background-color: #fcfcfc; line-height: 1.6; color: #555; }
+        .details-content ul { padding-left: 20px; }
+        .details-content li { margin-bottom: 10px; }
+        .aviso-costos { background: #fff8e1; border-left: 5px solid #ffc107; padding: 15px; border-radius: 5px; color: #856404; margin-top: 30px; font-size: 0.95rem; }
+        .section-separator { display: flex; align-items: center; margin: 60px 0 40px 0; }
+        .section-separator::before, .section-separator::after { content: ""; flex: 1; height: 1px; background: #ddd; }
+        .section-separator span { padding: 0 20px; color: #8B1D35; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 1.5rem; }
+
+        /* --- FAQ --- */
+        .faq-section { background-color: #e9ecef; padding: 40px 20px; border-radius: 8px; margin-top: 50px; }
+        .faq-item { background: white; padding: 20px; margin-bottom: 15px; border-radius: 6px; border-left: 4px solid #BC955C; }
+        .faq-question { font-weight: bold; margin-bottom: 10px; color: #333; }
+        .faq-search-box { margin: 0 auto 30px auto; max-width: 600px; position: relative; }
+        .faq-search-input { width: 100%; padding: 15px 20px; padding-left: 45px; border: 2px solid #ddd; border-radius: 50px; outline: none; }
+        .search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #8B1D35; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar"><div class="logo-container"><a href="index.html"><img src="img/LOGO.JPG" alt="Logo"></a></div><ul class="nav-links"><li><a href="index.html">INICIO</a></li><li><a href="asesoria.html">VOLVER</a></li></ul></nav>
+
+    <div class="page-header">
+        <h1>Materia Familiar (Carmen)</h1>
+        <p>Protección del patrimonio y bienestar de tu familia</p>
+    </div>
+
+    <main class="container" style="margin-top: 40px; margin-bottom: 60px;">
+
+        <div class="titular-box">
+            <img src="img/delegados/carmen.jpeg" alt="Casa de Justicia Carmen" class="banner-sede">
+        </div>
+
+        <h2 class="sede-title">Sede Carmen (Casa de Justicia)</h2>
+        <div class="staff-grid">
+            <div class="staff-card"><img src="img/delegados/cabrera cruz josefa del jesus.jpg" alt="Josefa"><div class="staff-name">Josefa Del Jesus Cabrera Cruz</div></div>
+            <div class="staff-card"><img src="img/delegados/pavon ordaz irma.jpg" alt="Irma"><div class="staff-name">Irma Pavon Ordaz</div></div>
+            <div class="staff-card"><img src="img/delegados/hernandez de la cruz juan manuel.jpg" alt="Juan Manuel"><div class="staff-name">Hernandez De La Cruz Juan Manuel</div></div>
+        </div>
+
+        <div class="section-separator"><span>Juicios y Trámites</span></div>
+
+        <div class="aviso-costos" style="margin-bottom: 30px;">
+            <strong><i class="fas fa-info-circle"></i> Guía Rápida:</strong> 
+            Haz clic en el nombre del trámite para ver qué es y qué papeles necesitas llevar.
+        </div>
+
+        <details>
+            <summary>Pensión Alimenticia (Para hijos o esposa/o)</summary>
+            <div class="details-content">
+                <p>Si necesitas pedir dinero legalmente para la comida, escuela y vestido de tus hijos.</p>
+                <strong style="color:#8B1D35; text-transform: uppercase; font-size: 0.9rem;">Requisitos:</strong>
+                <ul>
+                    <li><strong>Actas de Nacimiento de los hijos:</strong> (Copias certificadas recientes) para demostrar que son hijos de la persona a quien se demanda.</li>
+                    <li><strong>Acta de Matrimonio:</strong> (Solo si estás casada/o y pides pensión para ti también).</li>
+                    <li><strong>Lista de gastos:</strong> Una lista simple de cuánto gastan al mes en comida, luz, escuela, uniformes, etc.</li>
+                    <li><strong>Datos del trabajo del demandado:</strong> Dirección de dónde trabaja la persona para que el Juez le mande descontar (si la conoces).</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Divorcio (Disolución del vínculo matrimonial)</summary>
+            <div class="details-content">
+                <p>Para separarte legalmente. En Campeche no necesitas dar una razón, solo querer hacerlo.</p>
+                <strong style="color:#8B1D35; text-transform: uppercase; font-size: 0.9rem;">Requisitos:</strong>
+                <ul>
+                    <li><strong>Acta de Matrimonio:</strong> (Copia certificada reciente).</li>
+                    <li><strong>Actas de Nacimiento de los hijos:</strong> (Si tienen hijos menores de edad).</li>
+                    <li><strong>Convenio:</strong> Una propuesta por escrito de quién se quedará con los hijos, cuánto se pagará de pensión y cómo se reparten los bienes (tu abogado te ayuda a redactarlo).</li>
+                    <li><strong>Prueba de embarazo (negativa):</strong> En algunos casos el juzgado la pide si la esposa está en edad reproductiva (consultar con abogado).</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Juicio Sucesorio (Herencias)</summary>
+            <div class="details-content">
+                <p>Para pasar los bienes de un fallecido a sus familiares.</p>
+                <strong style="color:#8B1D35; text-transform: uppercase; font-size: 0.9rem;">Requisitos:</strong>
+                <ul>
+                    <li><strong>Acta de Defunción:</strong> Del dueño de los bienes.</li>
+                    <li><strong>Documentos que prueben parentesco:</strong> Actas de nacimiento de los hijos, acta de matrimonio de la esposa/o.</li>
+                    <li><strong>Testamento:</strong> El original en sobre cerrado o la escritura pública (solo si el fallecido dejó uno).</li>
+                    <li><strong>Títulos de propiedad:</strong> Escrituras de las casas o terrenos que se van a heredar.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Personas de Apoyo y Discapacidad (Antes Interdicción)</summary>
+            <div class="details-content">
+                <p>Para proteger y ayudar legalmente a personas que no pueden tomar decisiones por sí solas o tienen alguna discapacidad.</p>
+                <strong style="color:#8B1D35; text-transform: uppercase; font-size: 0.9rem;">Requisitos:</strong>
+                <ul>
+                    <li><strong>Dictamen Médico:</strong> Un documento de un doctor (psiquiatra o especialista) que explique la condición de salud de la persona.</li>
+                    <li><strong>Acta de Nacimiento:</strong> De la persona que necesita el apoyo.</li>
+                    <li><strong>Identificación de quien será el apoyo:</strong> De la persona que se hará cargo de ayudarle.</li>
+                </ul>
+            </div>
+        </details>
+
+        <div class="aviso-costos" style="margin-top: 30px;">
+            <strong><i class="fas fa-exclamation-triangle"></i> IMPORTANTE:</strong> 
+            La asesoría y el abogado son GRATUITOS. Sin embargo, los gastos externos (copias certificadas, peritajes, pruebas de laboratorio) deben ser cubiertos por el usuario.
+        </div>
+
+        <div style="background:#fff; padding:20px; margin-top:20px; border-radius:8px; text-align:center; border: 1px solid #ddd;">
+            <strong style="color:#333; font-size: 1.1rem;"><i class="far fa-clock" style="color:#8B1D35;"></i> Horario de Atención:</strong><br> 
+            Lunes a Viernes de 8:00 a.m. a 3:30 p.m.
+        </div>
+
+        <div class="faq-section">
+            <h2 style="text-align:center; color:#8B1D35; margin-bottom:30px;">Preguntas Frecuentes</h2>
+            
+            <div class="faq-search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="faqSearch" class="faq-search-input" placeholder="Escribe tu duda aquí...">
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item"><div class="faq-question">1. ¿Necesito obligatoriamente un abogado?</div><div class="faq-answer">Sí. Para casi todos los juicios necesitas un abogado. Si no tienes dinero, el INDAJUCAM te asigna uno gratuito.</div></div>
+                <div class="faq-item"><div class="faq-question">2. ¿El trámite tiene algún costo?</div><div class="faq-answer">La justicia es gratuita. El Juez y el INDAJUCAM NO cobran. Solo pagas gastos externos como copias o peritos.</div></div>
+                <div class="faq-item"><div class="faq-question">3. ¿Cuánto tiempo tarda un juicio?</div><div class="faq-answer">Depende: Divorcio (1-3 meses), Pensión (meses), Herencias (más de 1 año).</div></div>
+                <div class="faq-item"><div class="faq-question">4. ¿Mis documentos originales se quedan en el Juzgado?</div><div class="faq-answer">Sí. El Juez necesita validarlos. Quédate siempre con copias simples de todo.</div></div>
+                <div class="faq-item"><div class="faq-question">5. ¿Puedo llevar copias simples de mis actas o escrituras?</div><div class="faq-answer">No para iniciar. Necesitas originales o copias certificadas recientes.</div></div>
+                <div class="faq-item"><div class="faq-question">6. ¿Dónde están los Juzgados en Campeche?</div><div class="faq-answer">Los trámites se realizan en la Casa de Justicia correspondiente a tu municipio o Distrito Judicial.</div></div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer><div class="footer-content" style="text-align:center; padding:20px; color:white; background:#2c2c2c;"><p><strong>Instituto de Acceso a la Justicia del Estado de Campeche (INDAJUCAM)</strong><br>
+                Calle Niebla #2, Col. Fracciorama 2000, Campeche.<br>
+                Tel: 981 145 6181
+            </p></div></footer>
+
+</body>
+</html>

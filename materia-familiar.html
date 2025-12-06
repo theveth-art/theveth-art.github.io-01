@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
+
+/* --- ESTILOS GENERALES --- */
+        body { background-color: #f4f6f9; font-family: 'Segoe UI', sans-serif; }
+        .navbar img { height: 60px; width: auto; display: block; }
+        .page-header { background: linear-gradient(135deg, #8B1D35 0%, #5e1224 100%); color: white; padding: 50px 20px; text-align: center; margin-bottom: 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .page-header h1 { margin: 0; font-size: 2.5rem; text-transform: uppercase; letter-spacing: 1px; }
+        .page-header p { font-size: 1.2rem; margin-top: 10px; opacity: 0.9; }
+        
+        /* --- TITULAR Y BANNER SEDE (MODIFICADO) --- */
+        .titular-box { 
+            background-color: #fff; border-top: 5px solid #8B1D35; padding: 0; /* Quitamos padding para que el banner pegue al borde */
+            margin-bottom: 40px; border-radius: 8px; text-align: center; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden;
+        }
+
         /* --- AJUSTES BÁSICOS --- */
         body { background-color: #f4f6f9; font-family: 'Segoe UI', sans-serif; }
         .navbar img { height: 60px; width: auto; display: block; }
@@ -14,40 +29,23 @@
         .page-header h1 { margin: 0; font-size: 2.5rem; text-transform: uppercase; letter-spacing: 1px; }
         .page-header p { font-size: 1.2rem; margin-top: 10px; opacity: 0.9; }
 
-        /* --- ESTILO DE ACORDEONES (PREMIUM) --- */
-        details {
-            background-color: #fff; border-radius: 8px; margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: hidden;
-            border: 1px solid #eee; transition: all 0.3s ease;
+        /* --- BOTÓN DELEGACIONES --- */
+        .delegaciones-top-link {
+            background-color: #fff; border: 1px solid #ddd; padding: 15px 20px;
+            border-radius: 8px; text-align: center; margin-bottom: 40px;
+            display: flex; justify-content: center; align-items: center; gap: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        details:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: translateY(-2px); }
-
-        summary {
-            padding: 20px 25px; font-weight: 700; font-size: 1.1rem; cursor: pointer;
-            list-style: none; display: flex; justify-content: space-between; align-items: center;
-            background-color: #fff; color: #444; transition: background 0.3s, color 0.3s;
+        .btn-delegaciones-small {
+            background-color: #BC955C; color: white; text-decoration: none;
+            padding: 8px 20px; border-radius: 50px; font-weight: bold; font-size: 0.9rem;
+            transition: background 0.3s;
         }
-        summary::-webkit-details-marker { display: none; }
-        summary::after {
-            content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900;
-            font-size: 1rem; color: #BC955C; transition: transform 0.3s ease;
-        }
-        details[open] summary { background-color: #8B1D35; color: #fff; border-bottom: 1px solid #7a192e; }
-        details[open] summary::after { transform: rotate(180deg); color: #fff; }
-
-        .details-content {
-            padding: 30px; background-color: #fcfcfc; border-top: 4px solid #BC955C;
-            color: #555; line-height: 1.6;
-        }
-        .details-content ul { padding-left: 0; margin-top: 15px; list-style: none; }
-        .details-content li { margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; }
-        .details-content li::before {
-            content: '\f058'; font-family: "Font Awesome 6 Free"; font-weight: 900;
-            color: #BC955C; margin-top: 3px;
-        }
+        .btn-delegaciones-small:hover { background-color: #9e7d45; }
 
         /* --- PERSONAL --- */
-        .staff-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 40px; }
+        .sede-title { text-align: center; color: #fff; background-color: #BC955C; padding: 12px; margin: 30px 0 30px 0; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; }
+        .staff-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-bottom: 40px; }
         .staff-card { 
             width: 240px; background: #fff; border-radius: 10px; padding: 25px 15px; text-align: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.3s; border-top: 4px solid transparent;
@@ -57,19 +55,36 @@
         .staff-name { font-size: 0.9rem; font-weight: 800; text-transform: uppercase; color: #333; line-height: 1.3; }
         .staff-role { font-size: 0.8rem; color: #8B1D35; margin-top: 5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
 
+        /* --- ACORDEONES --- */
+        details { background-color: #fff; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #eee; transition: all 0.3s ease; }
+        details:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: translateY(-2px); }
+        summary { padding: 20px 25px; font-weight: 700; font-size: 1.1rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; background-color: #fff; color: #444; transition: background 0.3s, color 0.3s; }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 1rem; color: #BC955C; transition: transform 0.3s ease; }
+        details[open] summary { background-color: #8B1D35; color: #fff; border-bottom: 1px solid #7a192e; }
+        details[open] summary::after { transform: rotate(180deg); color: #fff; }
+        .details-content { padding: 30px; background-color: #fcfcfc; border-top: 4px solid #BC955C; color: #555; line-height: 1.6; }
+        .details-content ul { padding-left: 0; margin-top: 15px; list-style: none; }
+        .details-content li { margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; }
+        .details-content li::before { content: '\f058'; font-family: "Font Awesome 6 Free"; font-weight: 900; color: #BC955C; margin-top: 3px; }
+
         /* --- EXTRAS --- */
         .aviso-costos { background: #fff8e1; border-left: 5px solid #ffc107; padding: 20px; border-radius: 6px; color: #5d4037; margin-top: 40px; font-size: 0.95rem; line-height: 1.5; }
         .section-separator { display: flex; align-items: center; margin: 60px 0 40px 0; }
         .section-separator::before, .section-separator::after { content: ""; flex: 1; height: 1px; background: #ddd; }
         .section-separator span { padding: 0 20px; color: #8B1D35; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 1.5rem; }
 
-        /* FAQ */
-        .faq-search-box { margin: 0 auto 30px auto; max-width: 600px; position: relative; }
-        .faq-search-input { width: 100%; padding: 15px 20px; padding-left: 45px; border: 2px solid #ddd; border-radius: 50px; outline: none; }
-        .search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #8B1D35; }
+        /* --- FAQ --- */
         .faq-section { background-color: #e9ecef; padding: 40px 20px; border-radius: 8px; margin-top: 50px; }
         .faq-item { background: white; padding: 20px; margin-bottom: 15px; border-radius: 6px; border-left: 4px solid #BC955C; }
         .faq-question { font-weight: bold; margin-bottom: 10px; color: #333; }
+        .faq-search-box { margin: 0 auto 30px auto; max-width: 600px; position: relative; }
+        .faq-search-input { width: 100%; padding: 15px 20px; padding-left: 45px; border: 2px solid #ddd; border-radius: 50px; outline: none; }
+        .search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #8B1D35; }
+
+        @media(max-width: 768px) { 
+            .staff-card { width: 100%; max-width: 300px; } 
+            .delegaciones-top-link { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
@@ -84,22 +99,33 @@
         <p>Protección del patrimonio y bienestar de tu familia</p>
     </div>
 
-    <main class="container" style="margin-top: 40px; margin-bottom: 60px;">
+    <main class="container" style="margin-top: 20px; margin-bottom: 60px;">
 
-        <h2 style="color:#8B1D35; text-align: center; text-transform: uppercase; letter-spacing: 1px;">Nuestro Equipo de Asesores</h2>
+        <div class="delegaciones-top-link">
+            <span style="color:#555;"><i class="fas fa-map-signs"></i> ¿Buscas atención en otro municipio?</span>
+            <a href="delegaciones.html" class="btn-delegaciones-small">Ver otras Delegaciones</a>
+        </div>
+
+         <div class="titular-box">
+            <img src="img/delegados/campeche.jpg" alt="Casa de Justicia Carmen" class="banner-sede">
+        </div>
+
+
+        <h2 class="sede-title">Sede Campeche</h2>
+        
         <div class="staff-grid">
             <div class="staff-card"><img src="img/campeche-asesores/matu fierros claudia lissette.jpeg" alt="Claudia Matu"><div class="staff-name">Claudia Lissete Matu Fierros</div></div>
             <div class="staff-card"><img src="img/campeche-asesores/victor hugo rosiles lopez.jpg" alt="Victor Rosiles"><div class="staff-name">Victor Hugo Rosiles Lopez</div></div>
             <div class="staff-card"><img src="img/campeche-asesores/guerrero tello karime eugenia.jpeg" alt="Karime Guerrero"><div class="staff-name">Karime Eugenia Guerrero Tello</div><div class="staff-role">Ext. 1024</div></div>
             <div class="staff-card"><img src="img/campeche-asesores/estefania quijano cruz.jpg" alt="Estefania Quijano"><div class="staff-name">Estefania Quijano Cruz</div></div>
-            <div class="staff-card"><img src="img/campeche-asesores/juan ramon diaz ehuan.jpg" alt="Juan Ramón Diaz Ehuan"><div class="staff-name">Juan Ramon Diaz Ehuan</div></div>
+            <div class="staff-card"><img src="img/campeche-asesores/juan ramon diaz ehuan.jpg" alt="Juan Ramon Diaz"><div class="staff-name">Juan Ramon Diaz Ehuan</div></div>
             <div class="staff-card"><img src="img/campeche-asesores/jessica jasmin reyes gongora.jpg" alt="Jessica Reyes"><div class="staff-name">Jessica Jazmin Reyes Gongora</div></div>
             <div class="staff-card"><img src="img/campeche-asesores/angela sofia dzib rodriguez.jpg" alt="Angela Rodriguez"><div class="staff-name">Angela Sofia Rodriguez Dzib</div></div>
             <div class="staff-card"><img src="img/campeche-asesores/ingrid jareth xequeb euan.jpg" alt="Ingrid Xequeb"><div class="staff-name">Ingrid Jareth Xequeb Euan</div><div class="staff-role">Abogada Coadyuvante</div></div>
         </div>
-
-        <h3 style="text-align:center; margin-top:50px; color:#BC955C; text-transform: uppercase;">Sede Centro de Justicia para la Mujer</h3>
-        <div class="staff-grid" style="margin-top: 20px;">
+        
+        <h3 style="text-align:center; color:#666; margin-top:30px;">Centro de Justicia para la Mujer (Campeche)</h3>
+        <div class="staff-grid">
             <div class="staff-card"><img src="img/campeche-asesores/perez dzib elide angelica.jpeg" alt="Elide Perez"><div class="staff-name">Elide Angelica Perez Dzib</div></div>
         </div>
 
@@ -111,29 +137,27 @@
         </div>
 
         <details>
-            <summary>Pensión Alimenticia (Para hijos o cónyuge)</summary>
+            <summary>Pensión Alimenticia (Para hijos o esposa/o)</summary>
             <div class="details-content">
                 <p>Si necesitas pedir dinero legalmente para la comida, escuela y vestido de tus hijos.</p>
                 <strong style="color:#8B1D35; text-transform: uppercase; font-size: 0.9rem;">Requisitos:</strong>
                 <ul>
-                    <li><strong>Actas de Nacimiento:</strong> Copias certificadas recientes de los hijos.</li>
-                    <li><strong>Acta de Matrimonio:</strong> Solo si estás casada/o y pides pensión para ti también.</li>
-                    <li><strong>Lista de Gastos:</strong> Una lista simple de cuánto gastan al mes en luz, agua, comida, escuela, etc.</li>
-                    <li><strong>Datos del Trabajo:</strong> Dirección de dónde trabaja la persona a demandar (si la conoces) para que le descuenten.</li>
+                    <li><strong>Actas de Nacimiento de los hijos:</strong> (Copias certificadas recientes) para demostrar que son hijos de la persona a quien se demanda.</li>
+                    <li><strong>Acta de Matrimonio:</strong> (Solo si estás casada/o y pides pensión para ti también).</li>
+                    <li><strong>Datos del trabajo del demandado:</strong> Dirección de dónde trabaja la persona para que el Juez le mande descontar (si la conoces).</li>
                 </ul>
             </div>
         </details>
 
         <details>
-            <summary>Divorcio (Separación Legal)</summary>
+            <summary>Divorcio (Disolución del vínculo matrimonial)</summary>
             <div class="details-content">
-                <p>Para separarte legalmente. En Campeche no necesitas dar una razón o motivo, solo querer hacerlo.</p>
+                <p>Para separarte legalmente. En Campeche no necesitas dar una razón, solo querer hacerlo.</p>
                 <strong style="color:#8B1D35; text-transform: uppercase; font-size: 0.9rem;">Requisitos:</strong>
                 <ul>
-                    <li><strong>Acta de Matrimonio:</strong> Copia certificada reciente.</li>
-                    <li><strong>Actas de Nacimiento:</strong> De los hijos (si tienen menores de edad).</li>
-                    <li><strong>Convenio:</strong> Una propuesta escrita de quién se queda con los hijos, pensión y bienes (tu abogado te ayuda a redactarlo).</li>
-                    <li><strong>Prueba de embarazo:</strong> Negativa reciente (en algunos casos el juzgado la solicita).</li>
+                    <li><strong>Acta de Matrimonio:</strong> (Copia certificada reciente).</li>
+                    <li><strong>Actas de Nacimiento de los hijos:</strong> (Si tienen hijos menores de edad).</li>
+                    <li><strong>Convenio:</strong> Una propuesta por escrito de quién se quedará con los hijos, cuánto se pagará de pensión y cómo se reparten los bienes (tu abogado te ayuda a redactarlo).</li>
                 </ul>
             </div>
         </details>
@@ -141,26 +165,28 @@
         <details>
             <summary>Juicio Sucesorio (Herencias)</summary>
             <div class="details-content">
-                <p>Para pasar los bienes (casas, terrenos, dinero) de una persona fallecida a sus familiares.</p>
+                <p>Para pasar los bienes de un fallecido a sus familiares.</p>
                 <strong style="color:#8B1D35; text-transform: uppercase; font-size: 0.9rem;">Requisitos:</strong>
                 <ul>
                     <li><strong>Acta de Defunción:</strong> Del dueño de los bienes.</li>
-                    <li><strong>Comprobar Parentesco:</strong> Actas de nacimiento de hijos o matrimonio de la esposa/o.</li>
-                    <li><strong>Testamento:</strong> El original en sobre o escritura pública (solo si el fallecido dejó uno).</li>
-                    <li><strong>Títulos de Propiedad:</strong> Escrituras originales de lo que se va a heredar.</li>
+                    <li><strong>Documentos que prueben parentesco:</strong> Actas de nacimiento de los hijos, acta de matrimonio de la esposa/o.</li>
+                    <li><strong>Testamento:</strong> El original en sobre cerrado o la escritura pública (solo si el fallecido dejó uno).</li>
+                    <li><strong>Títulos de propiedad:</strong> Escrituras de las casas o terrenos que se van a heredar.</li>
+                    <li><strong>Facturas:</strong> Automoviles, motocicletas, etc.</li>
                 </ul>
             </div>
         </details>
 
         <details>
-            <summary>Personas de Apoyo y Discapacidad</summary>
+            <summary>Personas de Apoyo y Discapacidad (Antes Interdicción)</summary>
             <div class="details-content">
                 <p>Para proteger y ayudar legalmente a personas que no pueden tomar decisiones por sí solas o tienen alguna discapacidad.</p>
                 <strong style="color:#8B1D35; text-transform: uppercase; font-size: 0.9rem;">Requisitos:</strong>
                 <ul>
-                    <li><strong>Dictamen Médico:</strong> Documento de un doctor (psiquiatra o especialista) que explique la condición de salud.</li>
+                    <li><strong>Dictamen o nota médica:</strong> Un documento de un doctor (psiquiatra o especialista) que explique la condición de salud de la persona (con diagnostico).</li>
                     <li><strong>Acta de Nacimiento:</strong> De la persona que necesita el apoyo.</li>
-                    <li><strong>Identificación Oficial:</strong> De la persona que se hará cargo de ayudarle.</li>
+                    <li><strong>Identificación de quien será el apoyo:</strong> De la persona que se hará cargo de ayudarle.</li>
+                    <li><strong>Acta de nacimiento de quien será el apoyo:</strong> De la persona que se hará cargo de ayudarle.</li>
                 </ul>
             </div>
         </details>
@@ -185,11 +211,11 @@
             
             <div class="faq-container">
                 <div class="faq-item"><div class="faq-question">1. ¿Necesito obligatoriamente un abogado?</div><div class="faq-answer">Sí. Para casi todos los juicios necesitas un abogado. Si no tienes dinero, el INDAJUCAM te asigna uno gratuito.</div></div>
-                <div class="faq-item"><div class="faq-question">2. ¿El trámite tiene algún costo?</div><div class="faq-answer">El Juez y el INDAJUCAM NO cobran. Solo pagas gastos externos como copias o peritos.</div></div>
-                <div class="faq-item"><div class="faq-question">3. ¿Cuánto tiempo tarda un juicio?</div><div class="faq-answer">Depende: Divorcio (1-3 meses), Pensión (meses), Herencias (más de 1 año).</div></div>
+                <div class="faq-item"><div class="faq-question">2. ¿El trámite tiene algún costo?</div><div class="faq-answer">La justicia es gratuita. El Juez y el INDAJUCAM NO cobran. Solo pagas gastos externos como copias o peritos.</div></div>
+                <div class="faq-item"><div class="faq-question">3. ¿Cuánto tiempo tarda un juicio?</div><div class="faq-answer">Depende: Divorcio (1-3 meses), Pensión (meses), Herencias (más de 1 año), Civiles(más de 1 año).</div></div>
                 <div class="faq-item"><div class="faq-question">4. ¿Mis documentos originales se quedan en el Juzgado?</div><div class="faq-answer">Sí. El Juez necesita validarlos. Quédate siempre con copias simples de todo.</div></div>
-                <div class="faq-item"><div class="faq-question">5. ¿Puedo llevar copias simples?</div><div class="faq-answer">No para iniciar. Necesitas originales o copias certificadas recientes.</div></div>
-                <div class="faq-item"><div class="faq-question">6. ¿Dónde están los Juzgados?</div><div class="faq-answer">En la Casa de Justicia de tu municipio.</div></div>
+                <div class="faq-item"><div class="faq-question">5. ¿Puedo llevar copias simples de mis actas o escrituras?</div><div class="faq-answer">No para iniciar. Necesitas originales o copias certificadas recientes.</div></div>
+                <div class="faq-item"><div class="faq-question">6. ¿Dónde están los Juzgados en Campeche?</div><div class="faq-answer">Los trámites se realizan en la Casa de Justicia correspondiente a tu municipio o Distrito Judicial.</div></div>
             </div>
         </div>
 
@@ -197,7 +223,7 @@
 
     <footer>
         <div class="footer-content" style="text-align:center; padding:20px; color:white; background:#2c2c2c;">
-            <p><strong>INDAJUCAM</strong> Instituto de Acceso a la Justicia del Estado de Campeche (INDAJUCAM)</strong><br>
+            <p><strong>Instituto de Acceso a la Justicia del Estado de Campeche (INDAJUCAM)</strong><br>
                 Calle Niebla #2, Col. Fracciorama 2000, Campeche.<br>
                 Tel: 981 145 6181
             </p>
@@ -207,10 +233,8 @@
     <script>
         document.getElementById('faqSearch').addEventListener('keyup', function() {
             let filter = this.value.toLowerCase();
-            let items = document.querySelectorAll('.faq-item');
-            items.forEach(function(item) {
-                let text = item.innerText.toLowerCase();
-                item.style.display = text.includes(filter) ? "" : "none";
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.style.display = item.innerText.toLowerCase().includes(filter) ? "" : "none";
             });
         });
     </script>

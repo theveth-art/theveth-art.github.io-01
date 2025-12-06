@@ -3,127 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materia Civil - INDAJUCAM</title>
+    <title>Materia Civil (Campeche) - INDAJUCAM</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        /* --- AJUSTES BÁSICOS --- */
+        /* Estilos generales */
         body { background-color: #f4f6f9; font-family: 'Segoe UI', sans-serif; }
         .navbar img { height: 60px; width: auto; display: block; }
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
         .page-header { background: linear-gradient(135deg, #8B1D35 0%, #5e1224 100%); color: white; padding: 50px 20px; text-align: center; margin-bottom: 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .page-header h1 { margin: 0; font-size: 2.5rem; text-transform: uppercase; letter-spacing: 1px; }
         .page-header p { font-size: 1.2rem; margin-top: 10px; opacity: 0.9; }
 
-        /* --- ESTILO DE ACORDEONES (PREMIUM) --- */
-        details {
-            background-color: #fff;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            overflow: hidden;
-            border: 1px solid #eee;
-            transition: all 0.3s ease;
-        }
+        /* Botón Delegaciones */
+        .delegaciones-top-link { background-color: #fff; border: 1px solid #ddd; padding: 15px 20px; border-radius: 8px; text-align: center; margin-bottom: 40px; display: flex; justify-content: center; align-items: center; gap: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .btn-delegaciones-small { background-color: #BC955C; color: white; text-decoration: none; padding: 8px 20px; border-radius: 50px; font-weight: bold; font-size: 0.9rem; transition: background 0.3s; }
+        .btn-delegaciones-small:hover { background-color: #9e7d45; }
 
-        details:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transform: translateY(-2px);
-        }
-
-        summary {
-            padding: 20px 25px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #fff;
-            color: #444;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        summary::-webkit-details-marker { display: none; }
-
-        summary::after {
-            content: '\f078'; /* Flecha abajo */
-            font-family: "Font Awesome 6 Free"; 
-            font-weight: 900;
-            font-size: 1rem;
-            color: #BC955C;
-            transition: transform 0.3s ease;
-        }
-
-        details[open] summary {
-            background-color: #8B1D35;
-            color: #fff;
-            border-bottom: 1px solid #7a192e;
-        }
-
-        details[open] summary::after {
-            transform: rotate(180deg);
-            color: #fff;
-        }
-
-        .details-content {
-            padding: 30px;
-            background-color: #fcfcfc;
-            border-top: 4px solid #BC955C;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .details-content ul { padding-left: 0; margin-top: 15px; list-style: none; }
-        .details-content li { 
-            margin-bottom: 12px; 
-            display: flex; 
-            align-items: flex-start; 
-            gap: 10px;
-        }
-        .details-content li::before {
-            content: '\f058'; /* Check dorado */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            color: #BC955C;
-            margin-top: 3px;
-        }
-
-        /* --- PERSONAL --- */
-        .staff-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 40px; }
-        .staff-card { 
-            width: 240px; background: #fff; border-radius: 10px; padding: 25px 15px; text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.3s; border-top: 4px solid transparent;
-        }
+        /* Personal */
+        .sede-title { text-align: center; color: #fff; background-color: #BC955C; padding: 12px; margin: 0 0 30px 0; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; }
+        .staff-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-bottom: 40px; }
+        .staff-card { width: 240px; background: #fff; border-radius: 10px; padding: 25px 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.3s; border-top: 4px solid transparent; }
         .staff-card:hover { transform: translateY(-5px); border-top-color: #8B1D35; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-        .staff-card img { 
-            width: 140px; height: 140px; border-radius: 50%; object-fit: cover; 
-            border: 4px solid #f0f0f0; margin-bottom: 15px; 
-        }
+        .staff-card img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid #f0f0f0; margin-bottom: 15px; }
         .staff-name { font-size: 0.9rem; font-weight: 800; text-transform: uppercase; color: #333; line-height: 1.3; }
         .staff-role { font-size: 0.8rem; color: #8B1D35; margin-top: 5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* --- EXTRAS --- */
-        .aviso-costos { 
-            background: #fff8e1; border-left: 5px solid #ffc107; 
-            padding: 20px; border-radius: 6px; color: #5d4037; 
-            margin-top: 40px; font-size: 0.95rem; line-height: 1.5;
-        }
+        /* Acordeones y Extras */
+        details { background-color: #fff; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #eee; transition: all 0.3s ease; }
+        details:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: translateY(-2px); }
+        summary { padding: 20px 25px; font-weight: 700; font-size: 1.1rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; background-color: #fff; color: #444; transition: background 0.3s, color 0.3s; }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 1rem; color: #BC955C; transition: transform 0.3s ease; }
+        details[open] summary { background-color: #8B1D35; color: #fff; border-bottom: 1px solid #7a192e; }
+        details[open] summary::after { transform: rotate(180deg); color: #fff; }
+        .details-content { padding: 30px; background-color: #fcfcfc; border-top: 4px solid #BC955C; color: #555; line-height: 1.6; }
+        .details-content ul { padding-left: 0; margin-top: 15px; list-style: none; }
+        .details-content li { margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; }
+        .details-content li::before { content: '\f058'; font-family: "Font Awesome 6 Free"; font-weight: 900; color: #BC955C; margin-top: 3px; }
         
-        .section-separator {
-            display: flex; align-items: center; margin: 60px 0 40px 0;
-        }
-        .section-separator::before, .section-separator::after {
-            content: ""; flex: 1; height: 1px; background: #ddd;
-        }
-        .section-separator span {
-            padding: 0 20px; color: #8B1D35; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 1.5rem;
-        }
+        .aviso-costos { background: #fff8e1; border-left: 5px solid #ffc107; padding: 20px; border-radius: 6px; color: #5d4037; margin-top: 40px; font-size: 0.95rem; line-height: 1.5; }
+        .section-separator { display: flex; align-items: center; margin: 60px 0 40px 0; }
+        .section-separator::before, .section-separator::after { content: ""; flex: 1; height: 1px; background: #ddd; }
+        .section-separator span { padding: 0 20px; color: #8B1D35; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 1.5rem; }
 
-        /* FAQ Estilos */
+        /* FAQ */
         .faq-section { background-color: #e9ecef; padding: 40px 20px; border-radius: 8px; margin-top: 50px; }
         .faq-item { background: white; padding: 20px; margin-bottom: 15px; border-radius: 6px; border-left: 4px solid #BC955C; }
-        .faq-question { font-weight: bold; margin-bottom: 5px; color: #333; }
+        .faq-question { font-weight: bold; margin-bottom: 10px; color: #333; }
+        .faq-search-box { margin: 0 auto 30px auto; max-width: 600px; position: relative; }
+        .faq-search-input { width: 100%; padding: 15px 20px; padding-left: 45px; border: 2px solid #ddd; border-radius: 50px; outline: none; }
+        .search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #8B1D35; }
+        
+        @media(max-width: 768px) { .staff-card { width: 100%; max-width: 300px; } .delegaciones-top-link { flex-direction: column; } }
     </style>
 </head>
 <body>
@@ -133,25 +64,28 @@
         <ul class="nav-links"><li><a href="index.html">INICIO</a></li><li><a href="asesoria.html">VOLVER</a></li></ul>
     </nav>
 
-    <div class="page-header">
-        <h1>Materia Civil</h1>
-        <p>Regularización de Propiedades y Contratos</p>
-    </div>
+    <div class="page-header"><h1>Materia Civil</h1><p>Regularización de Propiedades y Contratos</p></div>
 
-    <main class="container" style="margin-top: 40px; margin-bottom: 60px;">
-
-        <h2 style="color:#8B1D35; text-align: center; text-transform: uppercase; letter-spacing: 1px;">Nuestro Equipo de Asesores</h2>
-        <div class="staff-grid">
-            <div class="staff-card">
-                <img src="img/campeche-asesores/homa torres rita del carmen.jpeg" alt="Rita Homa">
-                <div class="staff-name">Rita Del Carmen Homa Torres</div>
-            </div>
-            <div class="staff-card">
-                <img src="img/campeche-asesores/vasquez diaz paola yadira.jpg" alt="Paola Vazquez">
-                <div class="staff-name">Paola Yadira Vazquez Diaz</div>
-                <div class="staff-role">Abogada Coadyuvante</div>
-            </div>
+    <main class="container" style="margin-top: 20px; margin-bottom: 60px;">
+        
+        <div class="delegaciones-top-link">
+            <span style="color:#555;"><i class="fas fa-map-signs"></i> ¿Buscas atención en otro municipio?</span>
+            <a href="delegaciones.html" class="btn-delegaciones-small">Ver otras Delegaciones</a>
         </div>
+
+  <div class="titular-box">
+            <img src="img/delegados/campeche.jpg" alt="Casa de Justicia Carmen" class="banner-sede">
+        </div>
+
+
+        <h2 class="sede-title">Sede Campeche</h2>
+        
+        <div class="staff-grid">
+            <div class="staff-card"><img src="img/campeche-asesores/homa torres rita del carmen.jpeg"><div class="staff-name">Rita Del Carmen Homa Torres</div>
+        </div>
+        </div>
+
+
 
         <div class="section-separator"><span>Juicios y Trámites</span></div>
 
@@ -175,21 +109,24 @@
             </div>
         </details>
 
-        <details>
-            <summary>Hacerme dueño por antigüedad (Usucapión)</summary>
-            <div class="details-content">
-                <p>Cuando llevas más de 5 o 10 años viviendo en una casa como dueño, pero no tienes escrituras formales a tu nombre.</p>
-                <strong style="color:#8B1D35; text-transform: uppercase; font-size: 0.9rem;">Requisitos Obligatorios:</strong>
-                <ul>
-                    <li><strong>Documento de entrada:</strong> Contrato privado de compraventa, carta de donación o cesión de derechos (el "papelito" que tengas).</li>
-                    <li><strong>Certificado del Registro Público:</strong> Un documento que diga a nombre de quién está el terreno actualmente.</li>
-                    <li><strong>Pruebas de tiempo:</strong> Recibos de luz/agua antiguos, credenciales viejas con esa dirección.</li>
-                    <li><strong>Plano del terreno:</strong> Con medidas y colindancias (hecho por topógrafo).</li>
-                </ul>
-            </div>
-        </details>
+       
 
-        <details>
+<details>
+    <summary>Regularizar Casa o Terreno (Usucapión o Preescripción)</summary>
+    <div class="details-content">
+        <p>Juicio para obtener tus escrituras cuando llevas más de 5 o 10 años viviendo en una casa como dueño, pero no tienes escrituras formales a tu nombre.</p>
+        <strong style="color:#8B1D35; text-transform: uppercase; font-size: 0.9rem;">Requisitos Obligatorios:</strong>
+        <ul>
+            <li><strong>Documento de entrada:</strong> Contrato privado de compraventa, carta de donación o cesión de derechos (el "papelito" que tengas).</li>
+            <li><strong>Certificado de Inscripción:</strong> Documento del Registro Público que confirma a nombre de quién está el terreno actualmente.</li>
+            <li><strong>Certificado de Gravamen:</strong> Documento oficial de existencia o inexistencia de gravamen (para saber si la propiedad tiene deudas o cargas).</li>
+            <li><strong>Pruebas de tiempo:</strong> Recibos de luz/agua antiguos, credenciales viejas con esa dirección.</li>
+            <li><strong>Plano del terreno:</strong> Con medidas y colindancias (hecho por topógrafo).</li>
+        </ul>
+    </div>
+</details>
+
+<details>
             <summary>Escriturar terreno sin dueño (Información Ad Perpetuam)</summary>
             <div class="details-content">
                 <p>Para terrenos que nunca han tenido papeles y no están inscritos a nombre de nadie en el Registro Público.</p>
@@ -197,11 +134,24 @@
                 <ul>
                     <li><strong>Certificado de No Inscripción:</strong> Documento del Registro Público que certifique que ese terreno "no existe" en sus libros.</li>
                     <li><strong>Plano Topográfico:</strong> Medidas y colindancias exactas.</li>
-                    <li><strong>Testigos:</strong> 2 o 3 vecinos que vayan al juzgado a confirmar que has vivido ahí.</li>
+                    <li><strong>Testigos:</strong> 2 vecinos colindantes (izquierda y derecha de tu casa) que vayan al juzgado a confirmar que has vivido ahí.</li>
                     <li><strong>Constancia de Posesión:</strong> La que expide el Comisario Ejidal o Municipal.</li>
                 </ul>
             </div>
         </details>
+
+        <details>
+    <summary>Cobrar pensión alimenticia atrasada (Ejecución)</summary>
+    <div class="details-content">
+        <p>Para obligar legalmente al deudor a pagar todas las mensualidades de pensión que dejó de depositar (pago retroactivo), mediante embargo de cuentas, bienes o salario.</p>
+        <strong style="color:#8B1D35; text-transform: uppercase; font-size: 0.9rem;">Requisitos Obligatorios:</strong>
+        <ul>
+            <li><strong>Documento base:</strong> Copia de la Sentencia o del Convenio donde el Juez ordenó originalmente el pago de la pensión.</li>
+            <li><strong>Cálculo del adeudo:</strong> Una lista simple de los meses o años que no pagó y la suma total (para hacer la Planilla de Liquidación).</li>
+            <li><strong>Datos del deudor:</strong> Dónde trabaja actualmente o ubicación de bienes a su nombre (casa, auto) para señalar el embargo.</li>
+        </ul>
+    </div>
+</details>
 
         <details>
             <summary>Sacar a un inquilino o conocido (Terminación de Uso)</summary>
@@ -257,18 +207,20 @@
                 <div class="faq-question">3. ¿Mis escrituras originales se quedan en el Juzgado?</div>
                 <div class="faq-answer">Sí. El Juez necesita validar los originales. <strong>Recomendación:</strong> Quédate siempre con copias simples de todo lo que entregues. Al final del juicio te las devuelven.</div>
             </div>
+<div class="faq-item">
+    <div class="faq-question">4. ¿Necesito obligatoriamente el domicilio del demandado?</div>
+    <div class="faq-answer">
+        Sí, es lo ideal. Si no lo tienes, el juicio <strong>sí procede</strong>, pero la notificación se hará mediante <strong>Edictos</strong> (publicaciones en periódicos de Campeche). <strong>Ojo:</strong> Esto implica un costo adicional por las publicaciones y alarga un poco el tiempo del proceso.
+    </div>
+</div>
+      
         </div>
-
     </main>
 
-    <footer>
-        <div class="footer-content" style="text-align:center; padding:20px; color:white; background:#2c2c2c;">
-            <p><strong>INDAJUCAM</strong> Instituto de Acceso a la Justicia del Estado de Campeche (INDAJUCAM)</strong><br>
+    <footer><div class="footer-content" style="text-align:center; padding:20px; color:white; background:#2c2c2c;"><p><strong>Instituto de Acceso a la Justicia del Estado de Campeche (INDAJUCAM)</strong><br>
                 Calle Niebla #2, Col. Fracciorama 2000, Campeche.<br>
                 Tel: 981 145 6181
-            </p></p>
-        </div>
-    </footer>
-
+            </p></div></footer>
+    <script>document.getElementById('faqSearch').addEventListener('keyup', function() { let filter = this.value.toLowerCase(); document.querySelectorAll('.faq-item').forEach(item => { item.style.display = item.innerText.toLowerCase().includes(filter) ? "" : "none"; }); });</script>
 </body>
 </html>
